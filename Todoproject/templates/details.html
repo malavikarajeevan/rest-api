@@ -2,20 +2,25 @@
 {% load static %}
 {% block content %}
 <div class="container-fluid d-flex flex-wrap justify-content-center mt-3 mb-3">
-    <div class="card crd rounded-2 ms-4 me-4 mb-5 mt-2" style="width: 18rem;" >
+    <div class="card crd rounded-2 ms-4 w-5 me-4 mb-5 mt-3" style="border:0;">
+      <div class="row">
+        <div class="col-4">
     <img src="{{data.thumbnail}}" class="card-img-top rounded-2" alt="...">
     <div class="card-body">
-     
       <h3>{{data.title}}</h3>
-      <h4 class="pt-4">${{data.price}}</h3>
-      <h4>Disc:{{data.discountpercentage}}%</h4>
-      <h4>rating:{{data.rating}}</h4>
-      <h4>stock:{{data.stock}}</h4>
-      <h4>{{data.brand}}</h4>
-      <h4>{{data.category}}</h4>
+      <h4>${{data.price}}</h4>
+      <button class="btn btn-success">Add to cart</button>
+    </div>  
+      </div>
 
-      
-    </div>
+      <div class="col-3">
+      <h4 class="pb-2">Disc:{{data.discountPercentage}}%</h4>
+      <h3 class="pb-2">rating:{{data.rating}}</h3>
+      <h3 class="pb-2">stock:{{data.stock}}</h3>
+      <h4 class="pb-2">{{data.brand}}</h4>
+      <h4 class="pb-2">{{data.category}}</h4>
+      </div>
+  </div>
 </div>
 </div>
 
