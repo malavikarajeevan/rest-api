@@ -27,7 +27,7 @@ def Details(request,id):
 def smart(request,cat):
     a=[]
     print(cat)
-    urls='https://dummyjson.com/products/'+str(id)
+    urls='https://dummyjson.com/products/'
     res=requests.get(urls)
     if res.status_code==200:
         data=res.json()
