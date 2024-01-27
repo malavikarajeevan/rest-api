@@ -26,6 +26,15 @@
             {% endfor %}
           
           </ul>
+
+          {% if user.is_authenticated %}
+          <span>{{user}}</span>
+          <a href="{% url 'auth:logout'%}" class="btn btn-danger me-2" type="submit">logout</a>
+          {% else %}
+          <a href="{% url 'auth:register'%}" class="btn btn-light ms-5 me-2" type="submit">sign</a>
+          <a href="{% url 'auth:login'%}" class="btn btn-light me-2" type="submit">login</a>
+          {% endif %}
+
         </div>
       </ul>
     </div>
@@ -34,9 +43,9 @@
 
 
 
-<div class="container-fluid d-flex flex-wrap justify-content-center mb-5 bg-dark">
-  {% for i in data.products %}
-    <div class="card crd rounded-2 ms-4 me-4 mb-5 mt-2" style="width: 18rem;" >
+<div class="container-fluid d-flex flex-wrap justify-content-center mb-5 bg-secondary">
+  {% for i in data.products %}  
+    <div class="crd card rounded-2 ms-4 me-4 mb-5 mt-2" style="width: 18rem;" > 
     <a href="{% url 'details' i.id %}">
     <img src="{{i.thumbnail}}" class="card-img-top rounded-2" alt="..."></a>
     <div class="card-body">
